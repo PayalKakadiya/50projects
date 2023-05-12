@@ -1,1 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans:wght@100&family=Lato&family=Merriweather:wght@300&family=Playfair+Display&family=Roboto&family=Roboto+Slab&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto Slab', serif;
+  display: flex;
+  margin: 0;
+  height: 100vh;
+  align-items: center;
+}
+.container {
+  display: flex;
+  width: 90vw;
+}
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  margin: 10px;
+  position: relative;
+  flex: 1.5;
+  transition: flex 0.3s ease-in;
+}
+h3 {
+  font-size: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(n + 5) {
+    display: none;
+  }
+}
+@media ((min-width: 500px) and (max-width:1000px)) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(n + 7) {
+    display: none;
+  }
+}
